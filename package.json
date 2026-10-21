@@ -1,0 +1,51 @@
+﻿{
+  "name": "focusboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FocusBoard —— 今日任务 + 番茄专注计时 + 专注统计，纯本地 Electron 桌面应用",
+  "main": "electron/main.js",
+  "author": "course project",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "start:compat": "electron . --no-sandbox",
+    "start:diag": "electron . --enable-logging",
+    "dev": "electron .",
+    "test": "node --test",
+    "dist": "electron-builder",
+    "dist:portable": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^32.3.3",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.example.focusboard",
+    "productName": "FocusBoard",
+    "copyright": "Copyright © 2026",
+    "files": [
+      "electron/**/*",
+      "src/**/*",
+      "build/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ],
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "shortcutName": "FocusBoard"
+    }
+  }
+}

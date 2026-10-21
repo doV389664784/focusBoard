@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FocusBoard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">FocusBoard</span>
+    </div>
+
+    <nav class="nav" id="nav">
+      <button class="nav-item is-active" data-nav="today" type="button">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.2"/><path d="M10 6.2v4l2.6 1.7"/></svg>
+        <span>今日</span>
+      </button>
+      <button class="nav-item" data-nav="stats" type="button">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16V9M8.7 16V4.5M13.3 16v-5M18 16v-8"/></svg>
+        <span>统计</span>
+      </button>
+      <button class="nav-item" data-nav="settings" type="button">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="2.6"/><path d="M10 2.6v2M10 15.4v2M17.4 10h-2M4.6 10h-2M15.2 4.8l-1.4 1.4M6.2 13.8l-1.4 1.4M15.2 15.2l-1.4-1.4M6.2 6.2L4.8 4.8"/></svg>
+        <span>设置</span>
+      </button>
+    </nav>
+
+    <div class="sidebar-foot">
+      <div class="storage" id="storage-hint">本地存储</div>
+      <div class="version" id="version">v1.0.0</div>
+    </div>
+  </aside>
+
+  <main class="main" id="main"></main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div id="modal-root"></div>
+
+  <script src="lib/timer.js"></script>
+  <script src="lib/stats.js"></script>
+  <script src="lib/store.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

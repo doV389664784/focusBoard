@@ -1,0 +1,7 @@
+﻿node_modules/
+dist/
+.userdata/
+.tmpdata*/
+*.log
+doctor-report.txt
+.DS_Store
